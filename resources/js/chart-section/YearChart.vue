@@ -216,11 +216,21 @@ export default {
                 })
                 .then((res) => {
                     console.log("chart summary fetched");
-                    summary.max = res.data.max[0];
-                    summary.min = res.data.min[0];
-                    summary.rain = res.data.rain[0];
-                    summary.snow = res.data.snow[0];
-                    summary.wind = res.data.wind[0];
+                    if (res.data.max[0]) {
+                        summary.max = res.data.max[0];
+                    }
+                    if (res.data.min[0]) {
+                        summary.min = res.data.min[0];
+                    }
+                    if (res.data.rain[0]) {
+                        summary.rain = res.data.rain[0];
+                    }
+                    if (res.data.snow[0]) {
+                        summary.snow = res.data.snow[0];
+                    }
+                    if (res.data.wind[0]) {
+                        summary.wind = res.data.wind[0];
+                    }
                 })
                 .catch((err) => {
                     console.log("error:", err);
